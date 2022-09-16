@@ -1,0 +1,29 @@
+[project]
+name = "sds-submaker"
+description = "Uniden SDS100/SDS200 recording metadata subtitle generator"
+authors = [{ name = "K4YT3X", email = "i@k4yt3x.com" }]
+dependencies = [
+    "ffmpeg-python>=0.2.0",
+    "pysubs2>=1.4.3",
+    "loguru>=0.6.0",
+]
+requires-python = ">=3.7"
+readme = "README.md"
+license-expression = "ISC"
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/k4yt3x/sds-submaker/"
+
+[project.scripts]
+sds-submaker = "sds_submaker.__main__:main"
+
+[tool.isort]
+profile = "black"
+
+[tool.pdm]
+version = { from = "sds_submaker/__init__.py" }
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
